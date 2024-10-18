@@ -33,7 +33,6 @@ public class Test {
         //@XOR비트연산자
         System.out.println(3^10);//9
         //@NOT비트연산자
-
-        
+        // 수정
     }
 }
