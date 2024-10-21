@@ -15,6 +15,6 @@ public class Shiftoperator {
         System.out.println(-5>>2);//-2
         System.out.println(5>>3);//0
         System.out.println(-5>>3);//-1
-        
+
     }
 }
