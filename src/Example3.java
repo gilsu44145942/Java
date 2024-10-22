@@ -18,11 +18,11 @@ public class Example3 {
     }
     public static String checkPositiveOrNegative(int a){
         if ( a > 0) {
-            return ("양수");
+            return "양수";
         }else if (a < 0){
-            return ("음수");
+            return "음수";
         }else {
-            return ("0");
+            return "0";
         }
     }
 }
