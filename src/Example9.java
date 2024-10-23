@@ -9,6 +9,7 @@ public class Example9 {
     Scanner scanner = new Scanner(System.in);
         System.out.println("숫자를 입력하세요:");
         int num = scanner.nextInt();
+        scanner.close();
         return num*num;
     }
 }

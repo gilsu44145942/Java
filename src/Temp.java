@@ -6,6 +6,8 @@ public class Temp {
         Scanner scanner = new Scanner(System.in);
         System.out.println("온도를 입력해주세요:");
         int temp =scanner.nextInt();
+        scanner.close();
+
         if (temp<0){
             System.out.println("날씨가 매우 춥습니다. 얼음이 생길 수 있습니다.");
         }else if (temp<15){
