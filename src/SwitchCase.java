@@ -19,7 +19,7 @@ public class SwitchCase {
 
         }
         Scanner scanner= new Scanner(System.in);
-        System.out.println("요일을 입혁해주세요:");
+        System.out.println("요일을 입력해주세요:");
         String day= scanner.nextLine();
         switch (day){
         case "월":
