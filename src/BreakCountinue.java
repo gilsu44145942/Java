@@ -7,6 +7,7 @@ public class BreakCountinue {
             }
             System.out.println(i);
         }
+        System.out.println();
         // 이중 For문에서 바깥 for문까지 한번에 탈출하려면...
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 5; j++) {
@@ -17,6 +18,7 @@ public class BreakCountinue {
                 }
                 System.out.println("i=" + i + ",j=" + j);
             }
+            System.out.println();
         }
         //continue
         for (int i = 0; i < 3; i++) {

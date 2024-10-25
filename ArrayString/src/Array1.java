@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Array1 {
     public static void main(String[] args) {
         // 배열의 선언
-        int[] array1 = new int[3];// int형 자료 3개를 힙 영역에 생성
+        int[] array1=new int[3];// int형 자료 3개를 힙 영역에 생성
         double[] array2;
         array2 = new double[5];
         String [] array3 = new String[10];// 참조자료형도 배열을 만들 수 있음.
@@ -15,7 +15,7 @@ public class Array1 {
         // 읽는 법 : "array1의 0번 인덱스의 앖은 1"
         System.out.println(array1[0]+" "+ array1[1]+" "+array1[2]);
         System.out.println(Arrays.toString(array1));
-        array3[0]="첫번쨰";
+        array3[0]="첫번째";
         array3[1]="두번째";
         // 참조자료형의 경우,
         // 힙에 메모리공간을 만들고 값을 대입하지 않으면 null이 자동으로 들어감
