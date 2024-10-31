@@ -21,7 +21,7 @@ public class Array2D {
         // 리터럴 생성
         int[][] array4 = {{1,2,3},{4,5,6}};
 
-        // 2차원배열 출력.(deeoToiString 매서드 사용)
+        // 2차원배열 출력.(deepToiString 매서드 사용)
         System.out.println(Arrays.deepToString(array3));
         System.out.println(Arrays.deepToString(array4));
         System.out.println(array3.length); //2
