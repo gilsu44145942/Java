@@ -4,7 +4,7 @@ package P1031; // 패키지정의부분 (인텔리제이가 자동으로 부여�
 import java.util.Arrays;
 
 // MyClass.java파일내의 유일한 public 클래스임
-// 반드시 파일명과 클래스이름이 동알해야함!!
+// 반드시 파일명과 클래스이름이 동일해야함!!
 public class MyClass {
     public static void main(String[] args) {
         String[] strings ={"Hello","World"};

@@ -14,6 +14,7 @@ public class Student {
     // 기본 생성자
     public Student(){
 
+
     }
 
     // 매개변수를 가진 생성자
