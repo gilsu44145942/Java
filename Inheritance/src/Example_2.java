@@ -23,9 +23,10 @@ class Album {
         this.tracks = new String[5];
     }
 
-    public Album(String title, int releaseYear) {
+    public Album(String title, int releaseYear, String[] tracks) {
         this.title = title;
         this.releaseYear = releaseYear;
+        this.tracks= tracks;
     }
 
     public String getTitle() {
@@ -53,17 +54,19 @@ class Album {
     }
     public void addTracks(String track){
         for (int i =0; i<tracks.length;i++){
-            if (i < tracks.length-1 ){
-                tracks[i] = track ;
-            }else {
+            if (this.tracks[i]==null){ //비었으면
+                tracks[i] = track ; // 메개변수로 받은 곡제목을 저장.
+                return;
             }
+
         }
+        System.out.println("더 이상 추가할 수가 없어요." +track);
 
     }
 
     @Override
     public String toString() {
-        return "앨범제목:"+ title +" "+ "발매연도:"+ releaseYear;
+        return "앨범제목:"+ this.title +" "+ "발매연도:"+ this.releaseYear;
     }
 }
 
@@ -75,6 +78,7 @@ public class Example_2 {
         album1.setTitle("Java");
         album1.setReleaseYear(2024);
         System.out.println(album1.toString());
+        System.out.println();
 
         album1.addTracks("AAA");
         album1.addTracks("BBB");
@@ -84,6 +88,8 @@ public class Example_2 {
         album1.addTracks("FFF");
         album1.addTracks("GGG");
         System.out.println(Arrays.toString(album1.getTracks()));
+
     }
+
 }
 
