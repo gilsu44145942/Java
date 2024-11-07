@@ -19,6 +19,7 @@ class B1 extends A1 {
     B1(int a) {
         // super(); 또한 적혀 있지 않지만 자식클래스의 부모클래스 기본생성자가 들어가 있음
         System.out.println("B1생성자 2");
+        
     }
 }
 public class Super_3 {
