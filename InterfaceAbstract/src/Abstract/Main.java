@@ -51,7 +51,7 @@ public class Main {
         //현금 결제금액:10000.0원
 
         System.out.println();
-        Rectangle rectangle1 = new Square(4,5);
+        Rectangle rectangle1 = new Square(4);
         System.out.println(rectangle1.area());
 
     }

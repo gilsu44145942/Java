@@ -37,10 +37,16 @@ class Rectangle extends Shape{
     }
 
 }
+// 정사각형
 class Square extends Rectangle{
 
-    public Square(double x, double y) {
-        super(x, y);
+    public Square(double x) {
+        super(x, x);
+    }
+
+    @Override
+    double area() {
+        return x * x;
     }
 }
 
