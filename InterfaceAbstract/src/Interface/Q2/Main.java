@@ -29,7 +29,7 @@ interface Colorable {
 
 // 기본 도형 클래스
 abstract class Shape implements Calculatable, Colorable {
-    private String color;
+    protected String color;
 
     public Shape(String color) {
         this.color = color;
@@ -68,12 +68,9 @@ class Triangle extends Shape {
         // 정삼각형으로 가정
         return base * 3;
     }
-
-    @Override
-    public String getColor() {
-        return super.getColor();
+    
     }
-}
+
 
 
 // 원 클래스
@@ -87,8 +84,8 @@ class Circle extends Shape implements Resizable {
     }
 
     @Override
-    public  resize (double factor) {
-        return radius + radius;
+    public void resize (double factor) {
+        radius = radius * factor;
     }
 
     @Override
@@ -101,10 +98,7 @@ class Circle extends Shape implements Resizable {
         return 2 * PI * radius;
     }
 
-    @Override
-    public String getColor() {
-        return super.getColor();
-    }
+
 }
 
 
@@ -132,11 +126,8 @@ class Square extends Shape implements Resizable {
         return side * 4;
     }
 
-    @Override
-    public String getColor() {
-        return super.getColor();
     }
-}
+
 
 
 public class Main {
