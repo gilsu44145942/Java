@@ -6,6 +6,7 @@ interface A1 {
     public static final int a = 3;
     // 생성자 없음
     // 추상메서드
+
     public abstract void abc();
 }
 
