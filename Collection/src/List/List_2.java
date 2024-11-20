@@ -23,7 +23,6 @@ public class List_2 {
         // aList3.remove(Integer.valueOf(1)); // 오류
         //배열을 리스트로 전환하면 리스트를 새로 만드는게 아니 기존 배열을 이용하도록 동작함
         // 그러므로 배열과 마찬가지로 List의 사이즈를 늘리거나 줄이는 동작은 못함!!
-
         // 수정은 가능!!
         aList3.set(0,100);
         System.out.println(aList3); // [100, 2, 3, 4]
