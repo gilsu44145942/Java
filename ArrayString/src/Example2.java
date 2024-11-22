@@ -1,6 +1,4 @@
-import java.util.Arrays;
-
-public class Eameple2 {
+public class Example2 {
     public static void main(String[] args) {
         // 주어진 베열의 평균값을 계산하는 매서드
         int[] numbers = {10,20,30,40,50};

@@ -1,4 +1,4 @@
-public class Eameple5 {
+public class Example5 {
     public static void main(String[] args) {
         // 대소문자와 숫자가 혼합된 문자열에서 소문자와 대문자의 갯수를 리턴하는 메서드
         // 숫자는 제외

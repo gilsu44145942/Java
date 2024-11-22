@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Eameple7 {
+public class Example7 {
 
     public static void main(String[] args) {
         // 사용자로부터 이름을 입력받아 아래 회원배열에 있는 이름이면

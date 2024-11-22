@@ -1,4 +1,4 @@
-public class Eameple4 {
+public class Example4 {
     public static void main(String[] args) {
         // 배열속에서 찾고자 하는 데이터를 찾아 해당 인덱스를
         // 리턴하는 메서드

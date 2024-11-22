@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Eameple9 {
+public class Example9 {
     public static void main(String[] args) {
         // 배열에 포함된 짝수만 리턴하는 메서드
         int[] numbers1 = {64, 55, 95, 34, 41, 15, 11, 70, 2, 62};

@@ -1,4 +1,4 @@
-public class Eameple1 {
+public class Example1 {
     public static void main(String[] args) {
         //램덤한 정수 10개를 가진 배열에서 특정 값을 찾는 매서드.
         // 그 위치의 인덱스값을 리턴하는 메서드.
