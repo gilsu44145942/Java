@@ -14,7 +14,8 @@ end as 재고구분 from 제품;
 
 /*3. 입사한지 40개월이 지난 사원을 보이시오 */
 select * from 사원
-where curdate() > adddate(입사일, interval 40 month);
+where now() > adddate(입사일, interval 40 month);
+-- where timestampdiff(month,입사일,now())>40;
  
 
 /*4. 고객테이블에서 고객회사명과 전화번호를 아래 규칙에 따르도록 변경하고 변경된 컬럼
@@ -22,7 +23,7 @@ where curdate() > adddate(입사일, interval 40 month);
 고객회사명2의 조건 : 기존 고객회사명의 앞 2자리를 *로 변환
 전화번호2의 조건 : (02)978-1984의 형태를 02-978-1984로 변환 */
 
-select 고객회사명, concat('**',고객회사명)as 고객회사명2, 전화번호,replace(전화번호,')','-') as 전화번호2 from 고객; 
+select 고객회사명, concat('**',substring(고객회사명,3))as 고객회사명2, 전화번호,replace(substring(전화번호,2),')','-') as 전화번호2 from 고객; 
 
 
 
@@ -38,8 +39,11 @@ select 이름, 생일, timestampdiff(year,생일,now())as 만나이,입사일, t
 adddate(입사일, interval 500 day)as 입사500일후 from 사원;
 
 /*7. 주문테이블에서 요청일보다 발송일이 7일 이상 늦은 주문내역 */
-select * from 주문
-where adddate(요청일, interval 7 day)<= 발송일;
+select datediff(발송일, 요청일)as 지연일수 from 주문 
+where datediff(발송일, 요청일) >=7
+order by 지연일수 desc;
+-- select * from 주문
+-- where adddate(요청일, interval 7 day)<= 발송일;
 
 /*8. 고객테이블에서 아래와 같은 컬럼을 만드시오. 단, 도시구분과 마일리지구분
 컬럼의 조건은 아래 조건을 따르시오
@@ -52,6 +56,7 @@ case when 도시 like '%특별시%' then '대도시'
 when 도시 like '%광역시%' then '대도시'
 else '도시'
 end as 도시구분,
+-- if(도시 like '%특별시%'or 도시 like '%광역시%','대도시','도시') as 도시구분
 마일리지,
 case when 마일리지 >= 100000 then 'vvip'
 when 마일리지 >=10000 then 'vip'
@@ -60,7 +65,7 @@ end as 마일리지구분 from 고객;
 
 
 /*9. 주문테이블에서 아래 컬럼을 만드시오
-주문번호, 고객번호, 주문일, 주문년도, 주문분기, 주문월, 주문일, 주문요일, 
+주문번호, 고객번호, 주문일, 주문년도, 주문분기, 주문월, 주문날짜, 주문요일, 
 한글요일
 조건1 : 한글요일은 case문을 이용하여 정수값을 '월요일'같은 한글 요일표시로 
 표현 */
