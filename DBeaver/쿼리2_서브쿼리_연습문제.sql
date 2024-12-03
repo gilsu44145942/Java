@@ -31,4 +31,36 @@ from 고객;
 select 제품명, (select sum(주문수량)from 주문세부 where 주문세부.제품번호 = 제품.제품번호)as 총주문수량
 from 제품;
 
+-- 7. 제품테이블에 있는 제품 중 단가(주문세부 테이블)가 가장 높은 제품명
+select 제품명 from 제품
+where 제품번호 in (select 제품번호 from 주문세부 where 주문세부.단가 = (select max(단가)from 주문세부));
+
+/*select 제품명 , 주문세부.단가
+from 제품 inner join 주문세부
+on 제품.제품번호 = 주문세부.제품번호 
+where 주문세부.단가 =(select max(단가) from 주문세부)
+limit 1;*/
+
+-- 8. 제품테이블에 있는 제품단가가 가장 높은 제품의 주문수량합
+select 제품번호, sum(주문수량)as 주문수량합 from 주문세부
+where 제품번호 in(select 제품번호 from 제품 where 제품.단가 = (select max(단가)from 제품))
+group by 제품번호;
+
+-- 9. '아이스크림'제품의 주문수량합
+select sum(주문수량)as 주문수량합 from 주문세부
+where 제품번호 in (select 제품번호 from 제품 where 제품.제품명 = (select 제품명 from 제품 where 제품명 = '%아이스크림%' ));
+
+
+-- 10. '서울특별시'고객들에 대한 주문년도별 주문건수
+
+
+-- ** 위 쿼리들을 모두 일반 조인쿼리로도 바꿔보세요
+
+
+
+
+
+
+
+
 
