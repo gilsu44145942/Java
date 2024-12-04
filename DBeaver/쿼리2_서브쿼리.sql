@@ -24,6 +24,7 @@ select 고객.*
 from 고객 inner join 주문
 on 고객.고객번호 = 주문.고객번호
 where 주문.주문번호 = 'H0249';
+
 -- 서브쿼리
 select 고객.*
 from 고객
