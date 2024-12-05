@@ -27,6 +27,7 @@ select 고객회사명, (select count(*)from 주문 where 고객.고객번호 = 
 from 고객;
 
 
+
 -- 6. 제품명, 제품별 총주문수량을 조회
 select 제품명, (select sum(주문수량)from 주문세부 where 주문세부.제품번호 = 제품.제품번호)as 총주문수량
 from 제품;
@@ -86,27 +87,40 @@ where 주문번호 is null ;
 select 사원.사원번호, 이름, 직위
 from 사원 inner join 주문
 on 사원.사원번호 = 주문.사원번호
-where 주문일 = (adddate('2022-02-01',interval -3 month); 
+where 주문.주문일 >= adddate('2022-02-01', interval -3 month)
+group by 사원.사원번호, 이름, 직위;
 
 
 -- 5. 고객별 주문수를 계산하여 고객회사명, 주문수 조회
-
+select 고객.고객회사명, count(*)as 주문수
+from 주문 right join 고객
+on 주문.고객번호 = 고객.고객번호 
+group by 고객회사명;
 
 -- 6. 제품명, 제품별 총주문수량을 조회
+select 제품명, sum(주문수량)as 총주문수량
+from 제품 left join 주문세부 
+on 제품.제품번호 = 주문세부.제품번호
+group by 제품명;
 
 -- 7. 제품테이블에 있는 제품 중 단가(주문세부 테이블)가 가장 높은 제품명
-
-
-select 제품명 , 주문세부.단가
+select 제품명
 from 제품 inner join 주문세부
 on 제품.제품번호 = 주문세부.제품번호 
-where 주문세부.단가 =(select max(단가) from 주문세부)
+order by 주문세부.단가 desc
 limit 1;
 
 -- 8. 제품테이블에 있는 제품단가가 가장 높은 제품의 주문수량합
+select 제품.제품번호, sum(주문수량)as 주문수량합 
+from 주문세부 inner join 제품 
+on 주문세부.제품번호 = 제품.제품번호
+group by 제품번호;
+
+
 
 
 -- 9. '아이스크림'제품의 주문수량합
+
 
 
 -- 10. '서울특별시'고객들에 대한 주문년도별 주문건수
