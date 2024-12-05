@@ -10,7 +10,7 @@ abstract  class Vehicle {
     }
     abstract void drive();
     final void displayInfo(){
-        System.out.println(modelName + maxSpeed);
+        System.out.println("Model : " + modelName + ", " + "Max Speed : " + maxSpeed);
 
     }
 }
