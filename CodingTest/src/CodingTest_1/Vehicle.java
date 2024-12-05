@@ -8,6 +8,15 @@ abstract  class Vehicle {
         this.modelName = modelName;
         this.maxSpeed = maxSpeed;
     }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public int getMaxSpeed() {
+        return maxSpeed;
+    }
+   
     abstract void drive();
     final void displayInfo(){
         System.out.println("Model : " + modelName + ", " + "Max Speed : " + maxSpeed);
