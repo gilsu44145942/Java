@@ -24,7 +24,7 @@ public class TypeCasting_2 {
             D d = (D)value2;
             System.out.println("value2를 D로 다운캐스팅");
         }else {
-            System.out.println("value2를 D로 다움캐스팅 불가!");
+            System.out.println("value2를 D로 다운캐스팅 불가!");
         }
 
         // 객체의 실제 타입을 직접적으로 알 수 있는 방법??
@@ -37,4 +37,6 @@ public class TypeCasting_2 {
 
         }
     }
+
+    
 
