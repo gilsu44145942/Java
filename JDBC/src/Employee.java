@@ -18,6 +18,22 @@ public class Employee {
     public Employee() {
     }
 
+    public Employee(String employeeNum, String name, String englishName, String position, String gender, LocalDate birthday, LocalDate dateOfEmployment, String address, String city, String area, String homeNum, String supervisorNum, String departmentNum) {
+        this.employeeNum = employeeNum;
+        this.name = name;
+        this.englishName = englishName;
+        this.position = position;
+        this.gender = gender;
+        this.birthday = birthday;
+        this.dateOfEmployment = dateOfEmployment;
+        this.address = address;
+        this.city = city;
+        this.area = area;
+        this.homeNum = homeNum;
+        this.supervisorNum = supervisorNum;
+        this.departmentNum = departmentNum;
+    }
+
     public String getEmployeeNum() {
         return employeeNum;
     }
