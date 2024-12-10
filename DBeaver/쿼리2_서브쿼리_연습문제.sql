@@ -43,14 +43,13 @@ where 주문번호 is null ;
 select 사원번호, 이름, 직위
 from 사원
 where 사원번호 in(select 사원번호 from 주문
-where 주문일 >= adddate('2020-02-01',interval -3 month ) 
-);
+where 주문일 >= adddate('2020-02-01',interval -3 month ));
 
 
 select distinct 사원.사원번호, 사원.이름, 사원.직위
 from 사원 inner join 주문
 on 사원.사원번호 = 주문.사원번호
-where 주문.주문일 >= adddate('2022-02-01', interval -3 month)
+where 주문.주문일 >= adddate('2022-02-01', interval -3 month);
 -- group by 사원.사원번호, 이름, 직위;
 
 
@@ -130,10 +129,12 @@ order by 주문세부.제품번호;
 
 
 -- 10. '서울특별시'고객들에 대한 주문년도별 주문건수
-select year(주문일)as 주문년도, count(*) as 주문건수
+select year(주문일) as 주문년도,
+	 count(*) as 주문건수
 from 주문
-where 고객번호 in (select 고객번호 from 고객 where 고객.도시 ='서울특별시' )
-group by 주문년도;
+where 고객번호 in (select 고객번호 from 고객 where 도시 = '서울특별시')
+group by 주문년도
+order by 주문년도;
 
 
 select year(주문일) as 주문년도, count(*) as 주문건수
@@ -142,8 +143,6 @@ join 고객 on 주문.고객번호 = 고객.고객번호
 where 고객.도시 = '서울특별시'
 group by 주문년도
 order by 주문년도;
-
-
 
 -- ** 위 쿼리들을 모두 일반 조인쿼리로도 바꿔보세요
 
