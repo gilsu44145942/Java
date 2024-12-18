@@ -20,7 +20,7 @@ public class Order {
         this.shippingDate = shippingDate;
     }
 
-    public String getOrderId(String 주문번호) {
+    public String getOrderId() {
         return orderId;
     }
 
@@ -28,7 +28,7 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public String getCustomerId(String 고객번호) {
+    public String getCustomerId() {
         return customerId;
     }
 
@@ -44,7 +44,7 @@ public class Order {
         this.employeeId = employeeId;
     }
 
-    public LocalDate getOrderDate(String 주문일) {
+    public LocalDate getOrderDate() {
         return orderDate;
     }
 
