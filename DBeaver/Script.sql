@@ -39,7 +39,7 @@ select 도시 from 고객;
 select distinct 도시 from 고객;
 
 
-
+select 도시, sum(주문금액)as 주문금액합 from 
 
 
 

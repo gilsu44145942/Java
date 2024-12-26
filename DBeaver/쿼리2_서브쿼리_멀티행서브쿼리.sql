@@ -2,6 +2,7 @@
 
 use testdb;
 
+
 -- 멀티행(=복수행) 버스쿼리는 결과가 여러 행으로 나오는 쿼리를 의미함.
 -- 쿼리의 결과가 여러개이므로 '=' 연산자로 처리가 불가능하므로 여러 비교연산자가 필요함
 -- <in, all, any, exists, some> 등이 사용됨
@@ -67,13 +68,12 @@ and 고객.마일리지 = 최고마일리지정보.최고마일리지;
 
 
 
+select * from 고객
+where  마일리지 > (select avg(마일리지)from 고객) ;
 
 
-
-
-
-
-
+select * from 고객
+where if 
 
 
 

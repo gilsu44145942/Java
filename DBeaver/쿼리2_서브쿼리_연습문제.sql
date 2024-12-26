@@ -137,7 +137,7 @@ group by 주문년도
 order by 주문년도;
 
 
-select year(주문일) as 주문년도, count(*) as 주문건수
+select 도시,year(주문일) as 주문년도, count(*) as 주문건수
 from 주문
 join 고객 on 주문.고객번호 = 고객.고객번호
 where 고객.도시 = '서울특별시'
@@ -145,5 +145,7 @@ group by 주문년도
 order by 주문년도;
 
 -- ** 위 쿼리들을 모두 일반 조인쿼리로도 바꿔보세요
+
+
 
 

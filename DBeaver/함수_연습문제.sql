@@ -1,5 +1,6 @@
 use testdb;
 
+
 /*1. 2020년 2사분기의 주문내역을 보이시오 */
 select * from 주문
 where year(주문일)=2020 and quarter(주문일)= 2;
@@ -82,3 +83,5 @@ when 6 then '일요일'
 end as 한글요일
 from 주문 ;
 
+select * from 고객
+inner join 마일리지등급

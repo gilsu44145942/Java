@@ -44,6 +44,8 @@ order by 입사일 desc
 limit 3;
 
 
+select * from 제품 where 제품명  like '%크림%';
 
 
-
+select 제품번호, 제품명, 단가, 재고, sum(단가*재고)  from 제품
+group by 제품번호, 제품명, 단가, 재고;
